@@ -1,4 +1,4 @@
-name: golangci-lint
+name: Lint
 on:
   push:
     branches:
@@ -9,8 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  golangci:
-    name: lint
+  ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,4 +17,6 @@ jobs:
         with:
           check-latest: true
           go-version: 'stable'
-      - uses: golangci/golangci-lint-action@v4
+      - uses: golangci/golangci-lint-action@v6
+      - id: govulncheck
+        uses: golang/govulncheck-action@v1

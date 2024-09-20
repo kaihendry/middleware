@@ -1,3 +1,7 @@
+# Goal
+
+Simple structured logging middleware
+
 # Usage
 
 ```go
